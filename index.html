@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beatrice Magistro</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZ0X0C5KX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MZ0X0C5KX3');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text: #2c2c2c;
+            --text-light: #666;
+            --accent: #1a4a5e;
+            --accent-hover: #0d2f3d;
+            --bg: #fafafa;
+            --white: #fff;
+            --border: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 5rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 4px;
+            filter: grayscale(10%);
+        }
+
+        .hero-text {
+            padding-top: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-bio {
+            font-size: 1.05rem;
+            color: var(--text);
+            max-width: 650px;
+        }
+
+        .hero-bio p {
+            margin-bottom: 1rem;
+        }
+
+        .journal-list {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .hero-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--white);
+            transition: all 0.2s ease;
+        }
+
+        .hero-links a:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--white);
+        }
+
+        section.contact-section {
+            background: #2c2c2c !important;
+        }
+
+        /* Book Section */
+        .book-section {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .book-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .book-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .book-title a {
+            color: var(--text);
+        }
+
+        .book-title a:hover {
+            color: var(--accent);
+        }
+
+        .book-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .book-publisher {
+            font-size: 0.95rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .book-description {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        /* Publications Section */
+        .pub-intro {
+            font-size: 1.05rem;
+            color: var(--text);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+        }
+
+        .pub-category {
+            margin-bottom: 2.5rem;
+        }
+
+        .pub-category h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pub-list {
+            list-style: none;
+        }
+
+        .pub-list li {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            padding-left: 0;
+            line-height: 1.6;
+        }
+
+        .pub-list .authors {
+            color: var(--text);
+        }
+
+        .pub-list .title {
+            color: var(--text);
+        }
+
+        .pub-list .venue {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .pub-list .year {
+            color: var(--text-light);
+        }
+
+        /* Research Section */
+        .research-areas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .research-area h3 {
+            color: var(--accent);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+
+        .research-area p {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .research-area ul {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .research-area li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .research-area li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-light);
+        }
+
+        /* Full Publications Section */
+        .full-pub-section {
+            background: var(--bg);
+        }
+
+        .full-pub-list {
+            list-style: none;
+            max-width: 900px;
+        }
+
+        .full-pub-list li {
+            font-size: 0.9rem;
+            margin-bottom: 0.85rem;
+            line-height: 1.55;
+            padding-left: 0;
+        }
+
+        .pub-section-divider {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+        }
+
+        .pub-section-divider:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Teaching Section */
+        .teaching-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .teaching-category h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .teaching-category ul {
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .teaching-category li {
+            margin-bottom: 0.6rem;
+            color: var(--text);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            color: #fff;
+            padding: 4rem 0;
+            border-top: 3px solid var(--accent);
+        }
+
+        .contact-section h2 {
+            color: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .contact-info a {
+            color: var(--white);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .contact-info a:hover {
+            border-color: var(--white);
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.7);
+            border: none;
+        }
+
+        .contact-links a:hover {
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: rgba(255,255,255,0.5);
+            padding: 1.5rem 0;
+            font-size: 0.85rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 200px 1fr;
+                gap: 2.5rem;
+            }
+
+            .book-content,
+            .research-areas,
+            .teaching-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                max-width: 220px;
+                margin: 0 auto;
+            }
+
+            .hero-bio {
+                max-width: 100%;
+            }
+
+            .hero-links {
+                justify-content: center;
+            }
+
+            section {
+                padding: 3.5rem 0;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="nav-name">Beatrice Magistro</a>
+            <ul class="nav-links">
+                <li><a href="#research">Research</a></li>
+                <li><a href="#all-publications">Publications</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="headshot.jpg" alt="Beatrice Magistro" class="hero-image">
+                <div class="hero-text">
+                    <h1>Beatrice Magistro</h1>
+                    <p class="hero-subtitle">Assistant Professor of AI Governance<br>Northeastern University</p>
+                    <div class="hero-bio">
+                        <p>I study the political consequences of technological change. My research examines how citizens and political elites understand AI's economic effects, and how these beliefs shape policy preferences and political behavior.</p>
+                        <p>My work appears or is forthcoming in <span class="journal-list">the American Journal of Political Science, Public Opinion Quarterly, Environmental Politics, Political Science Research and Methods, Political Behavior, West European Politics, the European Journal of Political Research, Foreign Affairs, the Lancet, and Nature Medicine</span>, among others.</p>
+                        <p>My book, <em>Who Thinks Like an Economist?</em>, is forthcoming at Cambridge University Press.</p>
+                    </div>
+                    <div class="hero-links">
+                        <a href="Magistro_CV.pdf">Download CV</a>
+                        <a href="mailto:b.magistro@northeastern.edu">Email</a>
+                        <a href="https://scholar.google.com/citations?user=mMVx03EAAAAJ&hl=en&oi=ao">Google Scholar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <div class="container">
+            <h2>Research</h2>
+            <p class="pub-intro">Full publication list available in my <a href="Magistro_CV.pdf">CV</a> and in the <a href="#all-publications">publications section</a>.</p>
+            <div class="research-areas">
+                <div class="research-area">
+                    <h3>Technology & Politics</h3>
+                    <p>My research examines the political consequences of technological change, particularly artificial intelligence and automation. I study how citizens and political elites understand AI's economic effects, and how these beliefs shape policy preferences and political behavior.</p>
+                    <ul>
+                        <li><a href="https://osf.io/preprints/osf/mfvu5_v4">Causal Beliefs and Political Backlash Against AI</a> — <em>POQ</em>, 2026</li>
+                        <li><a href="https://academic.oup.com/pnasnexus/article/5/1/pgaf399/8429563">Women's Skepticism toward AI and Risk</a> — <em>PNAS Nexus</em>, 2026</li>
+                        <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/ajps.12959">Attitudes Toward AI and Globalization</a> — <em>AJPS</em>, 2025</li>
+                        <li><a href="https://doi.org/10.1080/01402382.2023.2297601">Automation Threat and Vote Choice in Europe</a> — <em>West European Politics</em>, 2025</li>
+                        <li><a href="https://www.foreignaffairs.com/united-states/coming-ai-backlash">The Coming AI Backlash</a> — <em>Foreign Affairs</em>, 2025</li>
+                        <li><a href="https://doi.org/10.1017/psrm.2024.1">Automation Trade-offs and Policies Addressing Job Loss</a> — <em>PSRM</em>, 2024</li>
+                        <li><a href="https://doi.org/10.1093/ser/mwae004">Gender Gap in Attitudes Toward Technological Change</a> — <em>Socio-Economic Review</em>, 2024</li>
+                        <li><a href="https://doi.org/10.1007/s11109-024-09914-0">Automation, Populist and Nationalist Rhetoric</a> — <em>Political Behavior</em>, 2024</li>
+                        <li>Causal Beliefs about AI among Politicians and the Public — Working paper coming soon</li>
+                    </ul>
+                    <p style="margin-top: 1.25rem;"><strong>Future Projects:</strong></p>
+                    <ul>
+                        <li><strong>SSHRC Project</strong> (2025–2028): As collaborator on a SSHRC-funded project (PI: Sophie Borwein), I am examining how political elites frame technological change through legislative speech analysis, elite surveys, and public responsiveness experiments.</li>
+                        <li><strong>Russell Sage Foundation</strong> (invited proposal): I am the principal investigator on a project to field four waves of surveys tracking Americans' causal beliefs about AI over 18 months—the first US longitudinal tracker of AI workplace attitudes.</li>
+                        <li><strong>Mental Models of Economic Growth:</strong> In February 2026, Sophie Borwein and I are launching a new survey with YouGov on mental models of economic growth, including a conjoint experiment examining whether citizens can maintain support for AI-driven creative destruction when benefits come bundled with visible job losses. We plan to write a paper on growth mental models and democratic sustainability, and one on public tolerance for Schumpeterian creative destruction in the AI era, with plans to expand cross-nationally.</li>
+                    </ul>
+                </div>
+                <div class="research-area">
+                    <h3>Populism & Political Economy</h3>
+                    <p>My work lies at the intersection of political economy and political behavior. I focus on how individuals' political and policy preferences change in response to socioeconomic shocks, and why voters sometimes support policies that undermine social welfare.</p>
+                    <ul>
+                        <li><a href="https://www.cambridge.org/us/universitypress/subjects/politics-international-relations/political-economy/who-thinks-economist-how-economist-mental-model-shapes-political-decisions?format=PB#description"><em>Who Thinks Like an Economist?</em></a> — Cambridge University Press, Forthcoming</li>
+                        <li><a href="https://link.springer.com/article/10.1007/s00191-025-00901-0">How Populism Harms Prosperity</a> — <em>Journal of Evolutionary Economics</em>, 2025</li>
+                        <li><a href="https://doi.org/10.1111/1475-6765.12126">Economic Crisis and Trust in the European Parliament</a> — <em>EJPR</em>, 2016</li>
+                        <li><a href="https://doi.org/10.1080/13608746.2021.2009107">Anti-Immigration Parties in Italy</a> — <em>South European Society and Politics</em>, 2021</li>
+                        <li><a href="https://doi.org/10.1017/S0143814X21000234">Party Cues, Policy Information, and Economic Literacy</a> — <em>Journal of Public Policy</em>, 2022</li>
+                        <li><a href="https://doi.org/10.1111/ecpo.12201">Economic Literacy and Policy Preferences in Italy</a> — <em>Economics & Politics</em>, 2021</li>
+                    </ul>
+                </div>
+                <div class="research-area">
+                    <h3>Climate & Environment</h3>
+                    <p>I examine how to bridge ideological divides on climate policy, including the effects of economic framing on carbon tax support and public attitudes toward solar geoengineering.</p>
+                    <ul>
+                        <li><a href="https://www.tandfonline.com/doi/full/10.1080/09644016.2024.2439686">Negative Externalities and Carbon Tax Support</a> — <em>Environmental Politics</em>, 2024</li>
+                        <li><a href="https://www.nature.com/articles/s44168-025-00236-3">Partisanship, Framing, and Solar Geoengineering</a> — <em>npj Climate Action</em>, 2025</li>
+                        <li><a href="https://journals.plos.org/climate/article?id=10.1371/journal.pclm.0000643">Political Ideology and Solar Geoengineering</a> — <em>PLOS Climate</em>, 2025</li>
+                        <li><a href="https://www.nature.com/articles/s41598-024-57042-w">Climate Change Free Riders</a> — <em>Scientific Reports</em>, 2024</li>
+                    </ul>
+                </div>
+                <div class="research-area">
+                    <h3>Sports & Society</h3>
+                    <p>I use my passion for soccer to study discrimination and human rights.</p>
+                    <ul>
+                        <li><a href="https://journals.sagepub.com/doi/10.1177/00380385221138332">Racial Bias in Italian Football</a> — <em>Sociology</em>, 2023 (covered by <a href="https://www.theguardian.com/football/2023/feb/25/italys-referees-punish-more-dark-skinned-footballers-than-light">The Guardian</a>)</li>
+                        <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/ssqu.13485">Sportswashing and Online Fan Behavior</a> — <em>Social Science Quarterly</em>, 2025</li>
+                    </ul>
+                </div>
+                <div class="research-area">
+                    <h3>COVID-19</h3>
+                    <p>From April 2020 to June 2021 I worked as a research assistant on the <a href="https://github.com/COVID19StatePolicy/SocialDistancing">UW COVID-19 State Policy Project</a>, the nation-leading effort in collecting daily data on social distancing policies in response to COVID-19 in the US.</p>
+                    <ul>
+                        <li><a href="https://doi.org/10.1017/S1537592721002036">The Pandemic Policy U-Turn</a> — <em>Perspectives on Politics</em>, 2021</li>
+                        <li><a href="https://doi.org/10.1017/spq.2021.22">Governor Partisanship and Mask Mandates</a> — <em>State Politics & Policy Quarterly</em>, 2021</li>
+                        <li>Multiple publications in <em>The Lancet</em> and <em>Nature Medicine</em></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="all-publications" class="full-pub-section">
+        <div class="container">
+            <h2>Publications</h2>
+            
+            <p class="pub-section-divider">Peer-Reviewed Publications</p>
+            <ul class="full-pub-list">
+                <li>Borwein, S., <strong>Magistro, B.</strong>, Alvarez, R.M., Bonikowski, B. & Loewen, P. (2026). "Explaining Women's Skepticism toward Artificial Intelligence: The Role of Risk Orientation and Risk Exposure." <em>PNAS Nexus</em>. <a href="https://academic.oup.com/pnasnexus/article/5/1/pgaf399/8429563">Link</a></li>
+                <li>Borwein, S., <strong>Magistro, B.</strong>, Alvarez, R.M., Bonikowski, B. & Loewen, P. (2026). "Causal Beliefs and the Potential for Political Backlash Against AI." <em>Public Opinion Quarterly</em>, Accepted. <a href="https://osf.io/preprints/osf/mfvu5_v4">Link</a></li>
+                <li><strong>Magistro, B.</strong>, Borwein, S., Alvarez, R.M., Bonikowski, B. & Loewen, P. (2025). "Attitudes Toward Artificial Intelligence (AI) and Globalization: Common Microfoundations and Political Implications." <em>American Journal of Political Science</em>. <a href="https://onlinelibrary.wiley.com/doi/10.1111/ajps.12959">Link</a></li>
+                <li>Borwein, S., Bonikowski, B., Loewen, P., Lee-Whiting, B. & <strong>Magistro, B.</strong> (2025). "Perceived automation threat and vote choice: evidence from 15 European democracies." <em>West European Politics</em>. <a href="https://doi.org/10.1080/01402382.2023.2297601">Link</a></li>
+                <li><strong>Magistro, B.</strong>, Debnath, R., Ebanks, D., Wennberg, P. & Alvarez, R.M. (2025). "Political ideology and views towards solar geoengineering." <em>PLOS Climate</em>. <a href="https://journals.plos.org/climate/article?id=10.1371/journal.pclm.0000643">Link</a></li>
+                <li><strong>Magistro, B.</strong> & Menaldo, V. (2025). "How Populism Harms Prosperity: Unified Populist Rule Reduces Investment, Innovation, and Productivity." <em>Journal of Evolutionary Economics</em>. <a href="https://link.springer.com/article/10.1007/s00191-025-00901-0">Link</a></li>
+                <li><strong>Magistro, B.</strong>, Debnath, R., Wennberg, P. & Alvarez, R.M. (2025). "Partisanship overcomes framing in shaping solar geoengineering perceptions: Evidence from a conjoint experiment." <em>npj Climate Action</em>. <a href="https://www.nature.com/articles/s44168-025-00236-3">Link</a></li>
+                <li>Wack, M., <strong>Magistro, B.</strong> & Aslett, K. (2025). "Silence in the Stands: Assessing the Impact of Russian State-Linked 'Sportswashing' on Online Fan Behavior Following the Full-Scale Invasion of Ukraine." <em>Social Science Quarterly</em>. <a href="https://onlinelibrary.wiley.com/doi/10.1111/ssqu.13485">Link</a></li>
+                <li><strong>Magistro, B.</strong> & Alvarez, R.M. (2024). "Appealing to Independents: Information on Negative Externalities Increases Support for Environmental Corrective Taxes." <em>Environmental Politics</em>. <a href="https://www.tandfonline.com/doi/full/10.1080/09644016.2024.2439686">Link</a></li>
+                <li>Sidhu, D., <strong>Magistro, B.</strong>, Stevens, B.A. & Loewen, P. (2024). "Why do citizens support algorithmic government." <em>Journal of Public Policy</em>. <a href="https://doi.org/10.1017/S0143814X24000114">Link</a></li>
+                <li><strong>Magistro, B.</strong>, Abramson, C., Ebanks, D., Debnath, R. & Alvarez, R.M. (2024). "Identifying American Climate Change Free Riders and Motivating Sustainable Behavior." <em>Scientific Reports</em>. <a href="https://www.nature.com/articles/s41598-024-57042-w">Link</a></li>
+                <li>Borwein, S., <strong>Magistro, B.</strong>, Loewen, P., Bonikowski, B. & Lee-Whiting, B. (2024). "The Gender Gap in Attitudes Toward Workplace Technological Change." <em>Socio-Economic Review</em>. <a href="https://doi.org/10.1093/ser/mwae004">Link</a></li>
+                <li><strong>Magistro, B.</strong>, Loewen, P., Bonikowski, B., Borwein, S. & Lee-Whiting, B. (2024). "Attitudes toward automation and the demand for policies addressing job loss: the effects of information about trade-offs." <em>Political Science Research and Methods</em>. <a href="https://doi.org/10.1017/psrm.2024.1">Link</a></li>
+                <li>Borwein, S., Bonikowski, B., Loewen, P., <strong>Magistro, B.</strong> & Lee-Whiting, B. (2024). "Who Can Assert Ownership Over Automation?: Workplace Technological Change, Populist and Nationalist Rhetoric, and Candidate Support." <em>Political Behavior</em>. <a href="https://doi.org/10.1007/s11109-024-09914-0">Link</a></li>
+                <li><strong>Magistro, B.</strong> & Wack, M. (2023). "Racial Bias in Fans and Officials: Evidence from the Italian Serie A." <em>Sociology</em>. <a href="https://journals.sagepub.com/doi/10.1177/00380385221138332">Link</a></li>
+                <li>Aslett, K. & <strong>Magistro, B.</strong> (2022). "Principal Agent Problems Within EU Funds: A Case Study of Patronage in Hungary." <em>Europe-Asia Studies</em>. <a href="https://www.tandfonline.com/doi/full/10.1080/09668136.2022.2122405">Link</a></li>
+                <li><strong>Magistro, B.</strong> (2022). "Party cues or policy information? The differential influence of financial and economic literacy on economic policy preferences." <em>Journal of Public Policy</em>. <a href="https://doi.org/10.1017/S0143814X21000234">Link</a></li>
+                <li><strong>Magistro, B.</strong> & Wittstock, N. (2021). "Changing preferences versus issue salience: The political success of anti-immigration parties in Italy." <em>South European Society and Politics</em>. <a href="https://doi.org/10.1080/13608746.2021.2009107">Link</a></li>
+                <li><strong>Magistro, B.</strong>, Owen, L. & Wittstock, N. (2021). "Populist support, institutional trust, and gender: the impact of foreign-imposed austerity during the European Debt Crisis." <em>Journal of Political Institutions and Political Economy</em>. <a href="http://dx.doi.org/10.1561/113.00000040">Link</a></li>
+                <li><strong>Magistro, B.</strong> (2021). "The Influence of Financial and Economic Literacy on Policy Preferences in Italy." <em>Economics & Politics</em>. <a href="https://doi.org/10.1111/ecpo.12201">Link</a></li>
+                <li>Adolph, C., Amano, K., Bang-Jensen, B., Fullman, N., <strong>Magistro, B.</strong>, Reinke, G., Wilkerson, J., Castellano, R. & Erickson, M. (2021). "The Pandemic Policy U-Turn: The role of partisanship, public health, and race in decisions to ease social distancing in the U.S." <em>Perspectives on Politics</em>. <a href="https://doi.org/10.1017/S1537592721002036">Link</a></li>
+                <li>Adolph, C., Amano, K., Bang-Jensen, B., Fullman, N., <strong>Magistro, B.</strong>, Reinke, G. & Wilkerson, J. (2021). "Governor partisanship explains the adoption of statewide mandates to wear face coverings." <em>State Politics & Policy Quarterly</em>. <a href="https://doi.org/10.1017/spq.2021.22">Link</a></li>
+                <li><strong>Magistro, B.</strong> (2020). "Financial Literacy and Support for Free Trade in the U.K." <em>The World Economy</em>. <a href="https://doi.org/10.1111/twec.12951">Link</a></li>
+                <li>Dotti Sani, G.M. & <strong>Magistro, B.</strong> (2016). "Increasingly unequal? The economic crisis, social inequalities and trust in the European Parliament in 20 European countries." <em>European Journal of Political Research</em>. <a href="https://doi.org/10.1111/1475-6765.12126">Link</a></li>
+            </ul>
+
+            <p class="pub-section-divider">Other Publications</p>
+            <ul class="full-pub-list">
+                <li><strong>Magistro, B.</strong>, Borwein, S., Alvarez, R.M., Bonikowski, B. & Loewen, P. (2025). "The Coming AI Backlash: How the Anger Economy Will Supercharge Populism." <em>Foreign Affairs</em>. <a href="https://www.foreignaffairs.com/united-states/coming-ai-backlash">Link</a></li>
+            </ul>
+
+            <p class="pub-section-divider">Public Health Publications</p>
+            <ul class="full-pub-list">
+                <li>COVID-19 Collaborators [including <strong>Magistro, B.</strong>] (2023). "Assessing COVID-19 pandemic policies and behaviours and their economic and educational trade-offs across US states from Jan 1, 2020, to July 31, 2022: an observational analysis." <em>The Lancet</em>. <a href="https://doi.org/10.1016/S0140-6736(23)00461-0">Link</a></li>
+                <li>COVID-19 Cumulative Infection Collaborators [including <strong>Magistro, B.</strong>] (2022). "Estimating global, regional, and national daily and cumulative infections with SARS-CoV-2 through Nov 14, 2021: a statistical analysis." <em>The Lancet</em>. <a href="https://doi.org/10.1016/S0140-6736(22)00484-6">Link</a></li>
+                <li>COVID-19 Excess Mortality Collaborators [including <strong>Magistro, B.</strong>] (2022). "Estimating excess mortality due to the COVID-19 pandemic: a systematic analysis of COVID-19-related mortality, 2020–21." <em>The Lancet</em>. <a href="https://doi.org/10.1016/S0140-6736(21)02796-3">Link</a></li>
+                <li>COVID-19 National Preparedness Collaborators [including <strong>Magistro, B.</strong>] (2022). "Pandemic preparedness and COVID-19: an exploratory analysis of infection and fatality rates, and contextual factors associated with preparedness in 177 countries." <em>The Lancet</em>. <a href="https://doi.org/10.1016/S0140-6736(22)00172-6">Link</a></li>
+                <li>COVID-19 Mental Disorders Collaborators [including <strong>Magistro, B.</strong>] (2021). "Global prevalence and burden of depressive and anxiety disorders in 204 countries and territories in 2020 due to the COVID-19 pandemic." <em>The Lancet</em>. <a href="https://doi.org/10.1016/S0140-6736(21)02143-7">Link</a></li>
+                <li>IHME COVID-19 Forecasting Team [including <strong>Magistro, B.</strong>] (2020). "Modeling COVID-19 Scenarios for the United States." <em>Nature Medicine</em>. <a href="https://doi.org/10.1038/s41591-020-1132-9">Link</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="teaching">
+        <div class="container">
+            <h2>Teaching</h2>
+            <div class="teaching-grid">
+                <div class="teaching-category">
+                    <h3>Current Courses at Northeastern</h3>
+                    <ul>
+                        <li><a href="syllabus_insh6500.pdf">INSH 6500: Statistical Analysis</a> (Graduate, Online)</li>
+                        <li><a href="syllabus_ai_society.pdf">PPUA 6401: AI & Society</a> (Graduate)</li>
+                        <li><a href="syllabus_pols3328.pdf">POLS 3328: AI, Politics & the Economy</a> (Undergraduate)</li>
+                    </ul>
+                </div>
+                <div class="teaching-category">
+                    <h3>Prepared to Teach</h3>
+                    <ul>
+                        <li>Introduction to Comparative Politics</li>
+                        <li>Introduction to International Political Economy</li>
+                        <li>The Political Economy of AI</li>
+                        <li>Quantitative Methods (Intro & Advanced)</li>
+                        <li>Survey Research Methods</li>
+                        <li>Globalization, Technology, and Politics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:b.magistro@northeastern.edu">b.magistro@northeastern.edu</a></p>
+                    <p><strong>Office:</strong> 922 Renaissance Park<br>1135 Tremont St, Boston, MA 02120</p>
+                    <div class="contact-links">
+                        <a href="Magistro_CV.pdf">CV (PDF)</a>
+                        <a href="https://scholar.google.com/citations?user=mMVx03EAAAAJ&hl=en&oi=ao">Google Scholar</a>
+                        <a href="https://cssh.northeastern.edu/faculty/beatrice-magistro/">Northeastern Profile</a>
+                    </div>
+                       </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Beatrice Magistro</p>
+        </div>
+    </footer>
+</body>
+</html>
